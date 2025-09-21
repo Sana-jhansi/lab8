@@ -10,10 +10,9 @@ jobs:
     steps:
       - name: Set environment variable with "key" as "foo" and "value" as "bar" 
         run: echo "foo=bar" >> $GITHUB_ENV
-
-      - name: Echo the environment variable "foo" from previous step
-        run: echo "Hello, "$foo"
-
+      - name: Echo the environment variable **foo** from previous step
+        run: echo "Hello, $foo"
+        
       - name: Mask the "api_key" within this steps's environment variable and echo it
         env:
           api_key: 1aO764b_4e59_p@$Sw0RdAStvdf-19ofvs4F
@@ -38,4 +37,5 @@ jobs:
       - name: Create a Job Summary as "Exploring Workflow Commands :thumbsup:"
 
         run: echo "Exploring Workflow Commands :thumbsup:" >> $GITHUB_STEP_SUMMARY
+
 
